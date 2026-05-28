@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -260,7 +259,7 @@
 
     <!-- Footer -->
     <footer class="py-6 text-center text-gray-300">
-        <p>© 2025 Irfan Khan Portfolio. All rights reserved.</p>
+        <p>© <span id="year"></span> Irfan Khan Portfolio. All rights reserved.</p>
     </footer>
 
     <!-- Back to Top Button -->
@@ -273,12 +272,9 @@
         AOS.init({ duration: 800, once: true });
         feather.replace();
 
-        document.getElementById('menu-btn').addEventListener('click', () => {
-            document.getElementById('mobile-menu').classList.toggle('hidden');
-        });
-
-        window.addEventListener('scroll', () => {
-            const btn = document.getElementById('back-to-top');
+        // document.getElementById('menu-btn').addEventListener('click', () => {
+        //     document.getElementById('mobile-menu').classList.toggle('hidden');
+        // });
             if (window.scrollY > 300) {
                 btn.classList.remove('opacity-0', 'invisible');
                 btn.classList.add('opacity-100', 'visible');
@@ -286,7 +282,8 @@
                 btn.classList.add('opacity-0', 'invisible');
                 btn.classList.remove('opacity-100', 'visible');
             }
-        });
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
     </script>
 </body>
 
